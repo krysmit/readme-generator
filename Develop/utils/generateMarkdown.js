@@ -15,20 +15,21 @@ function generateMarkdown(data) {
   return `# ${data.title}
           ## ${data.description}
 
-          //insert license image here
-          //delete this line`
+          
+          //delete this line after license images are inserted`
             ```md
             ![alt text](licenseimages.jpg)
             ```
-            `delete this line//
+            `delete this line after license images are inserted//
 
           ## Table of Contents
           * [Installaition] (#installation)
           * [Usage] (#usage)
           * [License] (#license)
-          * [Contribution] (#contribute)
-          * [Testing] (#tests)
-          * 
+          * [Contribution] (#contribution)
+          * [Testing] (#testing)
+          * [Questions] (#questions)
+          
           ## Installation
           ${data.install} 
 
@@ -37,13 +38,18 @@ function generateMarkdown(data) {
 
           ## License
           ${data.license}
-
           //need to have a description of the license added here
+
           ## Contribution
           ${data.contribute}
 
           ##Testing
           ${data.testing}
+
+          ##Questions
+          My Github:
+          https://github.com/${data.github}
+          Reach out to me with questions at: ${data.email}
      
 `;
 }
