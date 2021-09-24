@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-// const fs = require('fs');
-// const util = require('util');
+const fs = require('fs');
+const util = require('util');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -50,15 +50,7 @@ function writeToFile(fileName, data) {}
 function init() {
     inquirer
     .prompt(questions)
-    .then((answers) => {
-        console.log(answers.title)
-        console.log(answers.description)
-        console.log(answers.install)
-        console.log(answers.usage)
-        console.log(answers.license)
-        console.log(answers.contribute)
-        console.log(answers.test)
-    })
+    .then((answers) => writeToFile('README.md', answers))
     .catch((error) => {
         if (error.isError) {
             console.log("error")
