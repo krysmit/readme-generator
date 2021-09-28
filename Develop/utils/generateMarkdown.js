@@ -1,6 +1,11 @@
 // TODO: Create a function that returns a LICENSE BADGE based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === 'Creative Commons') {
+    return '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]'
+}
+}
+
 
 // TODO: Create a function that returns the LICENSE LINK
 // If there is no license, return an empty string
@@ -13,10 +18,11 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to GENERATE MARKDOWN for README
 function generateMarkdown(data) {
   return `
-  # ${data.title}
+         # ${data.title}
 
+         # ${renderLicenseBadge(data.license)}
         
-  ## Description
+         ## Description
           ${data.description}
 
 
