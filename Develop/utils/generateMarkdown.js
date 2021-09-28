@@ -3,6 +3,10 @@
 function renderLicenseBadge(license) {
   if (license === 'Creative Commons') {
     return '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]'
+} else if (license === 'MIT') {
+  return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]'
+} else if (license === 'Perl') {
+  return '[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]'
 }
 }
 
