@@ -18,14 +18,22 @@ function renderLicenseLink(license) {
   } else if (license === 'MIT') {
     return 'Find information about this license [here](https://opensource.org/licenses/MIT)'
   } else if (license === 'None') {
-    return 'No license information available.'
+    return 'No license link available.'
   }
 }
 
 
 // TODO: Create a function that RETURNS LICENSE SECTION of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) { 
+  if (license === 'Creative Commons') {
+  return 'Creative Commons (CC) is an internationally active non-profit organisation that provides free licences for creators to use when making their work available to the public. These licences help the creator to give permission for others to use the work in advance under certain conditions.'
+} else if (license === 'MIT') {
+  return 'A short, permissive software license. Basically, you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.  There are many variations of this license in use.'
+} else if (license === 'None') {
+  return 'No description available.'
+}
+}
 
 // TODO: Create a function to GENERATE MARKDOWN for README
 function generateMarkdown(data) {
@@ -33,7 +41,6 @@ function generateMarkdown(data) {
          # ${data.title}
 
          # ${renderLicenseBadge(data.license)}
-         # ${renderLicenseLink(data.license)}
         
          ## Description
           ${data.description}
@@ -45,6 +52,7 @@ function generateMarkdown(data) {
           * [License](#license)
           * [Contribution](#contribution)
           * [Testing](#testing)
+          * [License](#license)
           * [Questions](#questions)
           
           ## Installation
@@ -61,6 +69,10 @@ function generateMarkdown(data) {
 
           ##Testing
           ${data.testing}
+
+          ##License
+          ${renderLicenseSection(data.license)}
+          ${renderLicenseLink(data.license)}
 
           ##Questions
           My Github:
