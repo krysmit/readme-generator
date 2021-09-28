@@ -3,17 +3,25 @@
 function renderLicenseBadge(license) {
   if (license === 'Creative Commons') {
     return '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]'
-} else if (license === 'MIT') {
-  return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]'
-} else if (license === 'Perl') {
-  return '[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]'
-}
-}
-
+  } else if (license === 'MIT') {
+    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]'
+  } else if (license === 'None') {
+    return 'License: N/A'
+  }
+  }
 
 // TODO: Create a function that returns the LICENSE LINK
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === 'Creative Commons') {
+    return 'Find information about this license [here](http://creativecommons.org/publicdomain/zero/1.0/)'
+  } else if (license === 'MIT') {
+    return 'Find information about this license [here](https://opensource.org/licenses/MIT)'
+  } else if (license === 'None') {
+    return 'No license information available.'
+  }
+}
+
 
 // TODO: Create a function that RETURNS LICENSE SECTION of README
 // If there is no license, return an empty string
@@ -25,6 +33,7 @@ function generateMarkdown(data) {
          # ${data.title}
 
          # ${renderLicenseBadge(data.license)}
+         # ${renderLicenseLink(data.license)}
         
          ## Description
           ${data.description}

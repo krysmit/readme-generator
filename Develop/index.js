@@ -31,7 +31,7 @@ const questions = [
             type: 'list',
             name: 'license',
             message: 'Which license did you use?',
-            choices: ['Creative Commons','MIT','Perl'],
+            choices: ['Creative Commons','MIT','None'],
           },
           {
             type: 'input',
